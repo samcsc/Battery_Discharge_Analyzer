@@ -33,6 +33,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "temperature_sensor.h"
 
 /* USER CODE END Includes */
 
