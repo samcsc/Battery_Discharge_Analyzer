@@ -30,12 +30,18 @@
 #include <time.h>
 #include <sys/time.h>
 #include <sys/times.h>
+#include "stm32g4xx_hal.h"
 
 
 /* Variables */
 //#undef errno
+extern UART_HandleTypeDef hlpuart1;
+
 extern int errno;
-extern int __io_putchar(int ch) __attribute__((weak));
+__attribute__((weak)) int __io_putchar(int ch) {
+	HAL_UART_Transmit(&hlpuart1, (uint8_t *)&ch, 1, 10);
+	return ch;
+}
 extern int __io_getchar(void) __attribute__((weak));
 
 register char * stack_ptr asm("sp");
