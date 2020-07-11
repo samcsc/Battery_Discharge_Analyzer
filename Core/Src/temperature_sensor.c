@@ -13,9 +13,9 @@ extern ADC_HandleTypeDef hadc1;
 
 /* Functions */
 /**
- *  @brief 	GEt reading from the temperature sensor.
+ *  @brief 	Get reading from the temperature sensor.
  *  @param 	void
- *  @retval float temperature in degC.
+ *  @retval temperature in degree C.
  */
 float read_ntc_temperature(void) {
 
@@ -38,7 +38,7 @@ float read_ntc_temperature(void) {
         resolution = 64;
         break;
     default:
-        resolution = 1;
+    	return -1;
     }
 
     /* Start ADC conversion and compute the temperature using
